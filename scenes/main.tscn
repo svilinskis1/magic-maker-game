@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw1qe50havppv"]
+[gd_scene load_steps=3 format=3 uid="uid://cw1qe50havppv"]
 
-[ext_resource type="Texture2D" uid="uid://bdey71hoirn34" path="res://icon.svg" id="1_prqkr"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_vp73u"]
+[ext_resource type="Texture2D" uid="uid://bit4733bie7k6" path="res://assets/sprites/banban.png" id="1_w8onr"]
 
 [node name="main" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(564, 313)
-texture = ExtResource("1_prqkr")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_vp73u")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(405, 509)
+scale = Vector2(0.224, 0.24)
+texture = ExtResource("1_w8onr")
