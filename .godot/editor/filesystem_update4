@@ -1,2 +1,4 @@
+res://Input.gd
 res://scenes/main.tscn
-res://scenes/title.tscn
+res://input.tscn
+res://scripts/Input.gd
