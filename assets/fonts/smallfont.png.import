@@ -1,0 +1,21 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://cs166a711h61u"
+path="res://.godot/imported/smallfont.png-0e959f8c292f29b2ab2356588dac9883.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/smallfont.png"
+dest_files=["res://.godot/imported/smallfont.png-0e959f8c292f29b2ab2356588dac9883.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("32-122")
+columns=13
+rows=7
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+fallbacks=[]
+compress=true
