@@ -4,4 +4,5 @@ Button
 Label
 TextureButton
 Sprite2D
+Label
 CharacterBody2D
