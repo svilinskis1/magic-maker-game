@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707273733
+::res://::1707273833
 icon.svg::CompressedTexture2D::2606760455922994577::1706980084::1706980106::1::::<><>::
-input.tscn::PackedScene::2231210497587903016::1707268559::0::1::::<><>::res://scripts/Input.gd<>uid://bm03eqgal8upb::::res://assets/sprites/yay.png
+input.tscn::PackedScene::2231210497587903016::1707268559::0::1::::<><>::res://scripts/Input.gd<>uid://bm03eqgal8upb
 ::res://assets/::1706988868
 ::res://assets/fonts/::1707002692
 font.png::FontFile::1711669031270509927::1706989409::1706989427::1::::<><>::
