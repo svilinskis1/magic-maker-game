@@ -1,3 +1,59 @@
-[gd_scene format=3 uid="uid://d0lscgvjpl4xq"]
+[gd_scene load_steps=5 format=3 uid="uid://d0lscgvjpl4xq"]
+
+[ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="1_b8gt1"]
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_lgsja"]
+[ext_resource type="Texture2D" uid="uid://bit4733bie7k6" path="res://assets/sprites/banban.png" id="2_87l3k"]
+[ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="3_3gyfu"]
 
 [node name="title" type="Node2D"]
+script = ExtResource("1_lgsja")
+
+[node name="bg" type="ColorRect" parent="."]
+offset_right = 256.0
+offset_bottom = 192.0
+color = Color(0.0392157, 0.270588, 0.164706, 1)
+
+[node name="title" type="Label" parent="."]
+offset_top = 28.0
+offset_right = 256.0
+offset_bottom = 110.0
+theme_override_colors/font_shadow_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("1_b8gt1")
+theme_override_font_sizes/font_size = 32
+text = "RHYTHM 
+CHEF"
+horizontal_alignment = 1
+
+[node name="Banban" type="Sprite2D" parent="."]
+position = Vector2(29, 158)
+scale = Vector2(0.146, 0.134)
+texture = ExtResource("2_87l3k")
+
+[node name="play button" type="Button" parent="."]
+offset_left = 84.0
+offset_top = 117.0
+offset_right = 171.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("3_3gyfu")
+text = "Play"
+
+[node name="settings button" type="Button" parent="."]
+offset_left = 84.0
+offset_top = 137.0
+offset_right = 171.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("3_3gyfu")
+text = "Settings
+"
+
+[node name="quit button" type="Button" parent="."]
+offset_left = 84.0
+offset_top = 158.0
+offset_right = 171.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("3_3gyfu")
+text = "Quit
+"
+
+[connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="quit button" to="." method="_on_quit_button_pressed"]

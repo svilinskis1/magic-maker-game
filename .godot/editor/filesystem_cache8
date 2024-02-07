@@ -1,18 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706994133
+::res://::1707171935
 icon.svg::CompressedTexture2D::2606760455922994577::1706980084::1706980106::1::::<><>::
 ::res://assets/::1706988868
-::res://assets/fonts/::1706994138
-font.bmp::FontFile::4066919643666486115::1706989370::1706989371::1::::<><>::
+::res://assets/fonts/::1707002692
 font.png::FontFile::1711669031270509927::1706989409::1706989427::1::::<><>::
-Nintendo-DS-BIOS.ttf::FontFile::5319163575826476039::1706981560::1706983180::1::::<><>::
+RubikDoodleShadow-Regular.ttf::FontFile::7197030333522409513::1707002524::1707002692::1::::<><>::
 smallfont.png::FontFile::6091852011513270300::1706994138::1706994138::1::::<><>::
 ::res://assets/sounds/::1706980084
 ::res://assets/sprites/::1706980084
 banban.png::CompressedTexture2D::2988974062284328371::1706980084::1706980084::1::::<><>::
 ::res://assets/ui/::1706980084
 ::res://builds/::1706980084
-::res://scenes/::1706993769
-main.tscn::PackedScene::6371649978727857687::1706993769::0::1::::<><>::res://scripts/player.gd<>uid://bit4733bie7k6::::res://assets/sprites/banban.png<>uid://yne66lh3rbhn::::res://assets/fonts/font.png
+::res://scenes/::1707088181
+level select.tscn::PackedScene::5397209488030564024::1707088181::0::1::::<><>::uid://daskbkbie80jl::::res://assets/fonts/RubikDoodleShadow-Regular.ttf
+main.tscn::PackedScene::6371649978727857687::1707066531::0::1::::<><>::res://scripts/player.gd<>uid://bit4733bie7k6::::res://assets/sprites/banban.png<>uid://yne66lh3rbhn::::res://assets/fonts/font.png
+title.tscn::PackedScene::8937788122792800570::1707066531::0::1::::<><>::uid://daskbkbie80jl::::res://assets/fonts/RubikDoodleShadow-Regular.ttf<>uid://bit4733bie7k6::::res://assets/sprites/banban.png<>uid://yne66lh3rbhn::::res://assets/fonts/font.png
 ::res://scripts/::1706980084
 player.gd::GDScript::-1::1706980084::0::1::::<>CharacterBody2D<>::

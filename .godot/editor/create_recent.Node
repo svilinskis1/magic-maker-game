@@ -1,3 +1,7 @@
+AnimationPlayer
+ColorRect
+Button
 Label
+TextureButton
 Sprite2D
 CharacterBody2D
