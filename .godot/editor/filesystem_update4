@@ -1,6 +1,3 @@
-res://scenes/title.tscn
 res://scenes/main.tscn
-res://scenes/level select.tscn
-res://scripts/title.gd
-res://scripts/transition.gd
-res://scenes/transition.tscn
+res://scenes/title.tscn
+res://3dtest.tscn

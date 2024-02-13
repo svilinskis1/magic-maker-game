@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://bpuetuxfefopk"]
+
+[ext_resource type="Texture2D" uid="uid://bit4733bie7k6" path="res://assets/sprites/banban.png" id="1_avvh3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y4xqi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_28t7j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lswu"]
+albedo_color = Color(1, 0.366667, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aku78"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpdy4"]
+albedo_color = Color(0.968627, 0.933333, 0.862745, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gqliv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkkkh"]
+albedo_color = Color(1, 0.466667, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xkcca"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dwf4y"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wm4lg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb3p2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.73992, 0, 0, 0, 1, 0, 0, 0, 5.54954, 0.0379021, 0, -0.0653844)
+mesh = SubResource("PlaneMesh_y4xqi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.194469, 0, 0, 0, 0.53407, 0, 0, 0, 1.00547, 0, 0.482223, 0)
+mesh = SubResource("BoxMesh_28t7j")
+surface_material_override/0 = SubResource("StandardMaterial3D_1lswu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(1.0503, 0, 0, 0, 0.10495, 0, 0, 0, 1.05018, 0.0107037, 0.478682, -0.000648614)
+mesh = SubResource("BoxMesh_aku78")
+surface_material_override/0 = SubResource("StandardMaterial3D_vpdy4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(0.079294, 0, 0, 0, 1.0201, 0, 0, 0, 0.15962, -0.109939, 4.16859, 0.140691)
+mesh = SubResource("CapsuleMesh_gqliv")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mkkkh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(0.423526, 0, 0, 0, 3.59273, 0, 0, 0, 0.147726, -0.00946873, 4.09596, -0.0866939)
+mesh = SubResource("CylinderMesh_xkcca")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(0.572518, 0, 0, 0, 1, 0, 0, 0, 0.227719, 0, 0.972597, -0.33889)
+mesh = SubResource("BoxMesh_dwf4y")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(0.659774, 0, 0, 0, 0.966105, 0, 0, 0, 0.197893, 0, 2.24806, 0.164308)
+mesh = SubResource("BoxMesh_wm4lg")
+surface_material_override/0 = SubResource("StandardMaterial3D_tb3p2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.82149e-06, 0.430623, 7.05467)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.524509, 0, 0, 0, 0.552362, 0, 0, 0, 1, -5.86156, 1.49385, 0)
+billboard = 1
+texture = ExtResource("1_avvh3")

@@ -1,3 +1,6 @@
+MeshInstance3D
+Sprite3D
+Camera3D
 AnimationPlayer
 ColorRect
 Button
