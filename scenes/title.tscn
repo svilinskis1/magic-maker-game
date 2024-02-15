@@ -20,7 +20,7 @@ offset_bottom = 110.0
 theme_override_colors/font_shadow_color = Color(0.490196, 0.490196, 0.490196, 1)
 theme_override_fonts/font = ExtResource("1_b8gt1")
 theme_override_font_sizes/font_size = 32
-text = "RHYTHM 
+text = "SHOOT
 CHEF"
 horizontal_alignment = 1
 

@@ -1,7 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707361106
+::res://::1707855575
 icon.svg::CompressedTexture2D::2606760455922994577::1706980084::1706980106::1::::<><>::
-input.tscn::PackedScene::2231210497587903016::1707268559::0::1::::<><>::res://scripts/Input.gd<>uid://bm03eqgal8upb
 ::res://assets/::1706988868
 ::res://assets/fonts/::1707002692
 font.png::FontFile::1711669031270509927::1706989409::1706989427::1::::<><>::
@@ -13,13 +12,18 @@ banban.png::CompressedTexture2D::2988974062284328371::1706980084::1706980084::1:
 yay.png::CompressedTexture2D::3282004319832513799::1707268559::1707268559::1::::<><>::
 ::res://assets/ui/::1706980084
 ::res://builds/::1706980084
-::res://scenes/::1707268559
-level select.tscn::PackedScene::5397209488030564024::1707172974::0::1::::<><>::uid://daskbkbie80jl::::res://assets/fonts/RubikDoodleShadow-Regular.ttf<>uid://yne66lh3rbhn::::res://assets/fonts/font.png
-main.tscn::PackedScene::6371649978727857687::1707268559::0::1::::<><>::res://scripts/player.gd<>uid://bit4733bie7k6::::res://assets/sprites/banban.png<>uid://yne66lh3rbhn::::res://assets/fonts/font.png<>uid://612yf2woepky::::res://input.tscn
-title.tscn::PackedScene::8937788122792800570::1707172974::0::1::::<><>::uid://daskbkbie80jl::::res://assets/fonts/RubikDoodleShadow-Regular.ttf<>res://scripts/title.gd<>uid://bit4733bie7k6::::res://assets/sprites/banban.png<>uid://yne66lh3rbhn::::res://assets/fonts/font.png
-transition.tscn::PackedScene::3490416334347554199::1707172974::0::1::::<><>::res://scripts/transition.gd
-::res://scripts/::1707268559
+::res://charts/::1707365683
+track1.txt::TextFile::-1::1707365683::0::1::::<><>::
+::res://scenes/::1707436588
+beat.tscn::PackedScene::5094884976426217632::1707436588::0::1::::<><>::
+level select.tscn::PackedScene::5397209488030564024::1707363677::0::1::::<><>::uid://daskbkbie80jl::::res://assets/fonts/RubikDoodleShadow-Regular.ttf<>uid://yne66lh3rbhn::::res://assets/fonts/font.png
+rhythm controller.tscn::PackedScene::6371649978727857687::1707434026::0::1::::<><>::
+rhythm player.tscn::PackedScene::1982975468567115168::1707436218::0::1::::<><>::
+title.tscn::PackedScene::8937788122792800570::1707363677::0::1::::<><>::uid://daskbkbie80jl::::res://assets/fonts/RubikDoodleShadow-Regular.ttf<>res://scripts/title.gd<>uid://bit4733bie7k6::::res://assets/sprites/banban.png<>uid://yne66lh3rbhn::::res://assets/fonts/font.png
+transition.tscn::PackedScene::3490416334347554199::1707363677::0::1::::<><>::res://scripts/transition.gd
+::res://scripts/::1707435496
 Input.gd::GDScript::-1::1707268559::0::1::::<>Node2D<>::
 player.gd::GDScript::-1::1706980084::0::1::::<>CharacterBody2D<>::
+rhythm controller.gd::GDScript::-1::1707435496::0::1::::<>AudioStreamPlayer<>::
 title.gd::GDScript::-1::1707172804::0::1::::<>Node2D<>::
 transition.gd::GDScript::-1::1707172910::0::1::::<>Node2D<>::

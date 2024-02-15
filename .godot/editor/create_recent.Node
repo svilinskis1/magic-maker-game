@@ -1,5 +1,6 @@
-AnimationPlayer
 ColorRect
+AudioStreamPlayer
+AnimationPlayer
 Button
 Label
 TextureButton
