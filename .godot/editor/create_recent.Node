@@ -3,6 +3,8 @@ Sprite3D
 Camera3D
 AnimationPlayer
 ColorRect
+AudioStreamPlayer
+AnimationPlayer
 Button
 Label
 TextureButton
