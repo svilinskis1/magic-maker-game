@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci5pis83dnlqu"]
+[gd_scene load_steps=4 format=3 uid="uid://ci5pis83dnlqu"]
 
 [ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="1_fhjvr"]
+[ext_resource type="Script" path="res://scripts/level select.gd" id="1_xde2d"]
 [ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="2_4s8vm"]
 
 [node name="level select" type="Node2D"]
+script = ExtResource("1_xde2d")
 
 [node name="bg" type="ColorRect" parent="."]
-offset_right = 256.0
+offset_right = 341.0
 offset_bottom = 192.0
 color = Color(0.0392157, 0.270588, 0.164706, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 52.0
@@ -17,6 +20,7 @@ offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("1_fhjvr")
 theme_override_font_sizes/font_size = 23
 text = "Level Select"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 98.0
@@ -25,6 +29,7 @@ offset_right = 148.0
 offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("2_4s8vm")
 text = "Level 2"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 offset_left = 97.0
@@ -33,3 +38,6 @@ offset_right = 132.0
 offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("2_4s8vm")
 text = "Level 1"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
