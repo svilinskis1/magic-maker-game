@@ -1,18 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfubs5p3vky71"]
 
-[ext_resource type="Texture2D" uid="uid://bit4733bie7k6" path="res://assets/sprites/banban.png" id="1_hxxcn"]
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="1_xcsea"]
+[ext_resource type="Texture2D" uid="uid://cmu4kw3wypo44" path="res://assets/sprites/apple.png" id="2_jnwk6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mtiy4"]
+radius = 0.507247
+height = 1.01449
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_xcsea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00766087, 1.09658, 0)
 shape = SubResource("CapsuleShape3D_mtiy4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.336831, 0, 0, 0, 0.336831, 0, 0, 0, 1, 0, 1.05533, 0)
+transform = Transform3D(0.226028, 0, 0, 0, 0.226028, 0, 0, 0, 0.671044, 0, 1.05533, 0)
+pixel_size = 0.0631
 billboard = 2
-texture = ExtResource("1_hxxcn")
+texture = ExtResource("2_jnwk6")

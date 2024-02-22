@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	transition.change_scene("res://scenes/world.tscn")
+	transition.change_scene("res://scenes/level1.tscn")
 	pass # Replace with function body.

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ikktrcdsgqui"]
+[gd_scene load_steps=8 format=3 uid="uid://ikktrcdsgqui"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77hrj"]
-albedo_color = Color(0.0705882, 0.0470588, 0.121569, 1)
+[ext_resource type="PackedScene" uid="uid://ba6uwlxv4j5ev" path="res://scenes/player.tscn" id="1_p6diu"]
+[ext_resource type="PackedScene" uid="uid://cfubs5p3vky71" path="res://scenes/enemy.tscn" id="2_3aokm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_842up"]
 
@@ -19,11 +19,15 @@ background_energy_multiplier = 0.0
 
 [node name="World" type="Node3D"]
 
+[node name="Player" parent="." instance=ExtResource("1_p6diu")]
+
+[node name="Enemy" parent="." instance=ExtResource("2_3aokm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.30453)
+
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="Ground" type="MeshInstance3D" parent="Environment"]
 transform = Transform3D(5.34541, 0, 0, 0, 1, 0, 0, 0, 5.91647, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_77hrj")
 mesh = SubResource("PlaneMesh_842up")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground"]
