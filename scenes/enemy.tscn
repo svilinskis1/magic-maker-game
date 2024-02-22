@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfubs5p3vky71"]
+[gd_scene load_steps=4 format=3 uid="uid://cfubs5p3vky71"]
 
 [ext_resource type="Texture2D" uid="uid://bit4733bie7k6" path="res://assets/sprites/banban.png" id="1_hxxcn"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_xcsea"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mtiy4"]
 
 [node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_xcsea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
