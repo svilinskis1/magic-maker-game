@@ -1,22 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://ikktrcdsgqui"]
+[gd_scene load_steps=15 format=3 uid="uid://ikktrcdsgqui"]
 
+[ext_resource type="Script" path="res://scripts/level1.gd" id="1_ejo2c"]
 [ext_resource type="PackedScene" uid="uid://ba6uwlxv4j5ev" path="res://scenes/player.tscn" id="1_p6diu"]
 [ext_resource type="PackedScene" uid="uid://cfubs5p3vky71" path="res://scenes/enemy.tscn" id="2_3aokm"]
 [ext_resource type="Texture2D" uid="uid://djw77ikaw55jc" path="res://assets/textures/floor.png" id="3_614ur"]
 [ext_resource type="Texture2D" uid="uid://tba8at7sr3kg" path="res://assets/textures/wall.png" id="4_capob"]
+[ext_resource type="PackedScene" uid="uid://qnhykvamji81" path="res://scenes/pickup.tscn" id="4_iosqk"]
+[ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="5_7nx4w"]
+[ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="8_k3pov"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwuwi"]
 albedo_texture = ExtResource("3_614ur")
 uv1_scale = Vector3(20, 20, 20)
+texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_842up"]
 material = SubResource("StandardMaterial3D_kwuwi")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6a5e"]
-albedo_color = Color(0.0392157, 0.341176, 0.0941176, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_op2ua"]
 albedo_texture = ExtResource("4_capob")
+uv1_scale = Vector3(4, 4, 4)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_et1rb"]
 material = SubResource("StandardMaterial3D_op2ua")
@@ -26,14 +30,22 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="Environment" id="Environment_mfeqm"]
 background_mode = 1
-background_energy_multiplier = 0.0
+background_color = Color(0.0745098, 0.180392, 0.0823529, 1)
+background_energy_multiplier = 0.3
+fog_enabled = true
+fog_light_color = Color(0.0745098, 0.180392, 0.0823529, 1)
+fog_density = 0.1189
 
-[node name="World" type="Node3D"]
+[node name="Level" type="Node3D"]
+script = ExtResource("1_ejo2c")
 
 [node name="Player" parent="." instance=ExtResource("1_p6diu")]
 
 [node name="Enemy" parent="." instance=ExtResource("2_3aokm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.30453)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.69699)
+
+[node name="pickup" parent="." instance=ExtResource("4_iosqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05012, 3)
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -43,7 +55,6 @@ mesh = SubResource("PlaneMesh_842up")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground"]
 transform = Transform3D(-0.119717, 0, 0, 0, 1.18101, 0, 0, 0, 0.0931266, -0.396511, 0.517344, -0.28377)
-material_override = SubResource("StandardMaterial3D_i6a5e")
 mesh = SubResource("BoxMesh_et1rb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/Ground/MeshInstance3D"]
@@ -53,7 +64,6 @@ shape = SubResource("ConcavePolygonShape3D_fdogv")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/Ground"]
 transform = Transform3D(-0.119717, 0, 0, 0, 1.18101, 0, 0, 0, 0.0931266, 0.402499, 0.517344, -0.28377)
-material_override = SubResource("StandardMaterial3D_i6a5e")
 mesh = SubResource("BoxMesh_et1rb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/Ground/MeshInstance3D2"]
@@ -63,7 +73,6 @@ shape = SubResource("ConcavePolygonShape3D_fdogv")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/Ground"]
 transform = Transform3D(-0.119717, 0, 0, 0, 1.18101, 0, 0, 0, 0.0931266, 0.402499, 0.517344, 0.486334)
-material_override = SubResource("StandardMaterial3D_i6a5e")
 mesh = SubResource("BoxMesh_et1rb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/Ground/MeshInstance3D3"]
@@ -73,7 +82,6 @@ shape = SubResource("ConcavePolygonShape3D_fdogv")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment/Ground"]
 transform = Transform3D(-0.119717, 0, 0, 0, 1.18101, 0, 0, 0, 0.0931266, -0.455977, 0.517344, 0.486335)
-material_override = SubResource("StandardMaterial3D_i6a5e")
 mesh = SubResource("BoxMesh_et1rb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/Ground/MeshInstance3D4"]
@@ -85,5 +93,44 @@ shape = SubResource("ConcavePolygonShape3D_fdogv")
 environment = SubResource("Environment_mfeqm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, -0.012374, 0.999923, 0, -0.999923, -0.012374, 0, 5.6007, 0)
+transform = Transform3D(1, -2.15967e-07, 1.7452e-05, -1.54652e-05, 0.452513, 0.891758, -8.08982e-06, -0.891758, 0.452513, 0, 5.6007, 0)
 shadow_enabled = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="UI"]
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 194.0
+offset_bottom = 49.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+offset_left = 150.0
+offset_top = 7.0
+offset_right = 192.0
+offset_bottom = 47.0
+color = Color(0.184314, 0.298039, 0.160784, 1)
+
+[node name="Timer" type="Timer" parent="UI"]
+wait_time = 10.0
+one_shot = true
+
+[node name="timertext" type="Label" parent="UI"]
+offset_left = 155.0
+offset_top = 11.0
+offset_right = 187.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("5_7nx4w")
+theme_override_font_sizes/font_size = 24
+text = "99"
+
+[node name="scoreText" type="Label" parent="UI"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("8_k3pov")
+text = "Score:"
+
+[connection signal="timeout" from="UI/Timer" to="." method="_on_timer_timeout"]

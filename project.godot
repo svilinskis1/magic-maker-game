@@ -22,6 +22,7 @@ buses/default_bus_layout="res://assets/sounds/default_bus_layout.tres"
 [autoload]
 
 transition="*res://scenes/transition.tscn"
+global="*res://scripts/global.gd"
 
 [display]
 
