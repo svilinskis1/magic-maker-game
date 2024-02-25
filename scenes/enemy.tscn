@@ -14,8 +14,16 @@ script = ExtResource("1_0ax3x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00766087, 1.09658, 0)
 shape = SubResource("CapsuleShape3D_mtiy4")
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionArea" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00766087, 1.09658, 0)
+shape = SubResource("CapsuleShape3D_mtiy4")
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.226028, 0, 0, 0, 0.226028, 0, 0, 0, 0.671044, 0, 1.05533, 0)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("2_h7t6h")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
