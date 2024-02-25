@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var move_speed = 2.0
-@export var attack_range = 2.0
+@export var attack_range = 5.0
 
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 var dead = false
@@ -34,3 +34,8 @@ func attempt_to_kill_player():
 func kill():
 	dead = true
 	$CollisionShape3D.disabled = true
+	$Sprite3D.texture = load("")
+	var pickup = preload("res://scenes/pickup.tscn")
+	var pickup_object = pickup.instantiate()
+	add_child(pickup_object)
+	
