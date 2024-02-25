@@ -13,7 +13,8 @@ var dead = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	global.player = self
+	
 func _input(event):
 	if dead:
 		return
@@ -70,5 +71,6 @@ func shoot_anim_done():
 func kill():
 	dead = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	transition.change_scene("res://scenes/game over.tscn")
 	
 
