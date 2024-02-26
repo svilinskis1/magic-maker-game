@@ -126,7 +126,7 @@ offset_bottom = 47.0
 color = Color(0.184314, 0.298039, 0.160784, 1)
 
 [node name="Timer" type="Timer" parent="UI"]
-wait_time = 10.0
+wait_time = 30.0
 one_shot = true
 
 [node name="timertext" type="Label" parent="UI"]
