@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://ikktrcdsgqui"]
+[gd_scene load_steps=20 format=3 uid="uid://ikktrcdsgqui"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_ejo2c"]
 [ext_resource type="PackedScene" uid="uid://ba6uwlxv4j5ev" path="res://scenes/player.tscn" id="1_p6diu"]
-[ext_resource type="PackedScene" uid="uid://cfubs5p3vky71" path="res://scenes/enemy.tscn" id="2_3aokm"]
+[ext_resource type="PackedScene" uid="uid://cfubs5p3vky71" path="res://scenes/apple.tscn" id="2_3aokm"]
 [ext_resource type="Texture2D" uid="uid://djw77ikaw55jc" path="res://assets/textures/floor.png" id="3_614ur"]
+[ext_resource type="PackedScene" uid="uid://vrewddidrnvg" path="res://scenes/spaghetti.tscn" id="4_0uv3y"]
 [ext_resource type="Texture2D" uid="uid://tba8at7sr3kg" path="res://assets/textures/wall.png" id="4_capob"]
 [ext_resource type="PackedScene" uid="uid://qnhykvamji81" path="res://scenes/pickup.tscn" id="4_iosqk"]
 [ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="5_7nx4w"]
@@ -50,8 +51,11 @@ script = ExtResource("1_ejo2c")
 
 [node name="Player" parent="." instance=ExtResource("1_p6diu")]
 
-[node name="Enemy" parent="." instance=ExtResource("2_3aokm")]
+[node name="apple" parent="." instance=ExtResource("2_3aokm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.697)
+
+[node name="spaghetti" parent="." instance=ExtResource("4_0uv3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48578, 0, 0)
 
 [node name="pickup" parent="." instance=ExtResource("4_iosqk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05012, 3)

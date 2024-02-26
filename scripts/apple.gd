@@ -34,8 +34,9 @@ func attempt_to_kill_player():
 func kill():
 	dead = true
 	$CollisionShape3D.disabled = true
-	$Sprite3D.texture = load("")
+	$Sprite3D.visible = false
 	var pickup = preload("res://scenes/pickup.tscn")
 	var pickup_object = pickup.instantiate()
+	pickup_object.initialize("apple")
 	add_child(pickup_object)
 	

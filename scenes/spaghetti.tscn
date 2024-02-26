@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://vrewddidrnvg"]
+
+[ext_resource type="Script" path="res://scripts/spaghetti.gd" id="1_egv3l"]
+[ext_resource type="Texture2D" uid="uid://2c06aqr6h7sc" path="res://assets/sprites/spag.png" id="1_ovwvi"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ay12y"]
+height = 1.24709
+radius = 0.684586
+
+[node name="spaghetti" type="CharacterBody3D"]
+script = ExtResource("1_egv3l")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.226028, 0, 0, 0, 0.226028, 0, 0, 0, 0.671044, 0, 1.05533, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_ovwvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.963687, 0)
+shape = SubResource("CylinderShape3D_ay12y")
