@@ -9,8 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$UI/timertext.text = str(int($UI/Timer.time_left))
-	$UI/scoreText.text = str(global.score)
+	$UI/timertext.text = str("%02d" % int($UI/Timer.time_left))
 	pass
 
 

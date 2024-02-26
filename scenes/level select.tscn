@@ -14,28 +14,29 @@ color = Color(0.0392157, 0.270588, 0.164706, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 52.0
-offset_right = 196.0
-offset_bottom = 31.0
+offset_left = 100.0
+offset_top = 7.0
+offset_right = 244.0
+offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("1_fhjvr")
 theme_override_font_sizes/font_size = 23
 text = "Level Select"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 98.0
-offset_top = 94.0
-offset_right = 148.0
-offset_bottom = 117.0
+offset_left = 145.0
+offset_top = 118.0
+offset_right = 195.0
+offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("2_4s8vm")
 text = "Level 2"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
-offset_left = 97.0
-offset_top = 49.0
-offset_right = 132.0
-offset_bottom = 72.0
+offset_left = 145.0
+offset_top = 74.0
+offset_right = 195.0
+offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("2_4s8vm")
 text = "Level 1"
 metadata/_edit_use_anchors_ = true

@@ -1,16 +1,14 @@
 extends Node3D
 var type 
-var reward = 10
 
-func initialize(type):	
+func initialize(_type):	
+	type = _type
 	match type:
 		"apple":
 			$sprite.texture = load("res://assets/sprites/applepickup2.png")
-			reward = global.apple_worth
 		
 		"spaghetti":
 			$sprite.texture = load("res://assets/sprites/spagpickup.png")
-			reward = global.spag_worth
 		_:
 			print("invalid pickup spawn")
 
@@ -25,5 +23,13 @@ func _process(delta):
 
 func _on_area_3d_area_entered(area):
 	if area.name == "PlayerArea":
-		global.score += reward
+		match type:
+			"apple":
+				global.apples_collected += 1
+				print("picked up apple")
+		
+			"spaghetti":
+				global.spag_collected += 1
+				print("picked up spag")
+		
 		queue_free()
