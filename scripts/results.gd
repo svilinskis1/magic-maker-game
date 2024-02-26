@@ -16,6 +16,8 @@ func _ready():
 	$totalMoney.text = str("%03d" % (global.apples_collected * global.apple_worth + global.spag_collected * global.spag_worth))
 	
 	$AnimationPlayer.play("results")
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
