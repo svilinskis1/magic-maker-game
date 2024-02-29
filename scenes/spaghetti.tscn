@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://vrewddidrnvg"]
+[gd_scene load_steps=5 format=3 uid="uid://vrewddidrnvg"]
 
 [ext_resource type="Script" path="res://scripts/spaghetti.gd" id="1_egv3l"]
 [ext_resource type="Texture2D" uid="uid://2c06aqr6h7sc" path="res://assets/sprites/spag.png" id="1_ovwvi"]
+[ext_resource type="AudioStream" uid="uid://uwn1wd1r34ex" path="res://assets/sounds/hurt.wav" id="3_fnqqu"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ay12y"]
 height = 1.24709
@@ -28,5 +29,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="CollisionArea" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.072626, 0)
 shape = SubResource("CylinderShape3D_ay12y")
+
+[node name="HurtSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fnqqu")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

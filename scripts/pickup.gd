@@ -38,5 +38,7 @@ func _on_area_3d_area_entered(area):
 				global.spag_collected += 1
 				print("picked up spag")
 		
+		$CollectSoundPlayer.play()
+		
 		remove_child(self)
 		queue_free()

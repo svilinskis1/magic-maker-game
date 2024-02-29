@@ -81,15 +81,10 @@ func kill():
 	dead = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	transition.change_scene("res://scenes/game over.tscn")
-	
-
-
 
 func _on_player_area_area_entered(area):
 	if area.name == "WaterArea":
-		inWater = true
-		
-
+		inWater = true		
 
 func _on_player_area_area_exited(area):
 		if area.name == "WaterArea":
