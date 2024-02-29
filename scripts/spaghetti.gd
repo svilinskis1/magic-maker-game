@@ -6,6 +6,9 @@ extends CharacterBody3D
 @onready var player = global.player
 var dead = false
 var inWater = false
+var invincible = false
+
+var health = 2
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -36,7 +39,7 @@ func _process(delta):
 
 func _on_area_3d_area_entered(area):
 	if area.name == "PlayerArea":
-		player.kill()
+		player.take_damage(1)
 		
 	if area.name == "WaterArea":
 		inWater = true
@@ -45,12 +48,24 @@ func _on_player_area_area_exited(area):
 		if area.name == "WaterArea":
 			inWater = false
 
-func kill():
-	dead = true
-	$CollisionShape3D.disabled = true
-	$Area3D/CollisionArea.disabled = true
-	$Sprite3D.visible = false
-	var pickup = preload("res://scenes/pickup.tscn")
-	var pickup_object = pickup.instantiate()
-	pickup_object.initialize("spaghetti")
-	add_child(pickup_object)
+func take_damage(dmg):
+	if(not invincible):
+		health -= dmg
+		invincible = true
+		$InvincibilityTimer.start()
+		
+	if(health < 1):
+		dead = true
+		$CollisionShape3D.disabled = true
+		$Area3D/CollisionArea.disabled = true
+		$Sprite3D.visible = false
+		var pickup = preload("res://scenes/pickup.tscn")
+		var pickup_object = pickup.instantiate()
+		pickup_object.initialize("spaghetti")
+		add_child(pickup_object)
+		
+
+
+
+func _on_invincibility_timer_timeout():
+	invincible = false

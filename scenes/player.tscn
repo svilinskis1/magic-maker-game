@@ -59,9 +59,24 @@ autoplay = "idle"
 position = Vector2(171, 96)
 texture = ExtResource("3_gml2l")
 
+[node name="HealthBar" type="ProgressBar" parent="UI/Control"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 157.0
+offset_right = 180.0
+offset_bottom = 184.0
+max_value = 3.0
+step = 1.0
+value = 3.0
+rounded = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rfoxf")
 bus = &"SFX"
 
+[node name="InvincibilityTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_player_area_area_exited"]
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

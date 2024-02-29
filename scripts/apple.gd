@@ -26,9 +26,9 @@ func _process(delta):
 
 func _on_area_3d_area_entered(area):
 	if area.name == "PlayerArea":
-		player.kill()
+		player.take_damage(1)
 
-func kill():
+func take_damage(dmg):
 	dead = true
 	$CollisionShape3D.disabled = true
 	$Area3D/CollisionArea.disabled = true
