@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://8jsq7rinl8av"]
+
+[ext_resource type="Texture2D" uid="uid://tba8at7sr3kg" path="res://assets/textures/wall.png" id="1_f7ty0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32wxb"]
+albedo_texture = ExtResource("1_f7ty0")
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xxw4i"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_32wxb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ta2wl"]
+
+[node name="LevelCube" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_xxw4i")
+
+[node name="CubeBody" type="StaticBody3D" parent="."]
+
+[node name="CubeCollision" type="CollisionShape3D" parent="CubeBody"]
+shape = SubResource("BoxShape3D_ta2wl")

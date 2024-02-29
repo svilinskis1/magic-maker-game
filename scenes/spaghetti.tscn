@@ -8,6 +8,8 @@ height = 1.24709
 radius = 0.684586
 
 [node name="spaghetti" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_egv3l")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -19,3 +21,12 @@ texture = ExtResource("1_ovwvi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.963687, 0)
 shape = SubResource("CylinderShape3D_ay12y")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionArea" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.072626, 0)
+shape = SubResource("CylinderShape3D_ay12y")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

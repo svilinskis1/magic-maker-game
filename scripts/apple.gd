@@ -13,11 +13,15 @@ func _physics_process(delta):
 		return
 	
 	var dir = player.global_position - global_position
-	dir.y = 0.0
 	dir = dir.normalized()
 	
 	velocity = dir * move_speed
 	move_and_slide()
+
+func _process(delta):
+	if(dead && get_child_count() == 0):
+		remove_child(self)
+		queue_free()
 
 
 func _on_area_3d_area_entered(area):
@@ -27,6 +31,7 @@ func _on_area_3d_area_entered(area):
 func kill():
 	dead = true
 	$CollisionShape3D.disabled = true
+	$Area3D/CollisionArea.disabled = true
 	$Sprite3D.visible = false
 	var pickup = preload("res://scenes/pickup.tscn")
 	var pickup_object = pickup.instantiate()

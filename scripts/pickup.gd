@@ -1,5 +1,7 @@
-extends Node3D
+extends RigidBody3D
+
 var type 
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func initialize(_type):	
 	type = _type
@@ -20,6 +22,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func _physics_process(delta):
+		
+	linear_velocity.y -= gravity * delta
 
 func _on_area_3d_area_entered(area):
 	if area.name == "PlayerArea":
@@ -32,4 +38,5 @@ func _on_area_3d_area_entered(area):
 				global.spag_collected += 1
 				print("picked up spag")
 		
+		remove_child(self)
 		queue_free()
