@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://btoud78wleqe3"]
+[gd_scene load_steps=9 format=3 uid="uid://btoud78wleqe3"]
 
 [ext_resource type="Script" path="res://scripts/results.gd" id="1_thk3f"]
 [ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="2_1xyru"]
+[ext_resource type="Texture2D" uid="uid://djw77ikaw55jc" path="res://assets/textures/floor.png" id="2_hj681"]
 [ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="3_6ttlf"]
 [ext_resource type="Texture2D" uid="uid://bnqv7ys82cp43" path="res://assets/sprites/applepickup2.png" id="4_5q38s"]
 [ext_resource type="Texture2D" uid="uid://q8ruvawxp12s" path="res://assets/sprites/spagpickup.png" id="5_6c3q0"]
@@ -102,11 +103,11 @@ _data = {
 [node name="results" type="Node2D"]
 script = ExtResource("1_thk3f")
 
-[node name="bg" type="ColorRect" parent="."]
-offset_right = 341.0
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 342.0
 offset_bottom = 192.0
-color = Color(0.0392157, 0.270588, 0.164706, 1)
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_hj681")
+stretch_mode = 1
 
 [node name="title" type="Label" parent="."]
 offset_left = 98.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0lscgvjpl4xq"]
+[gd_scene load_steps=6 format=3 uid="uid://d0lscgvjpl4xq"]
 
 [ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="1_b8gt1"]
 [ext_resource type="Script" path="res://scripts/title.gd" id="1_lgsja"]
+[ext_resource type="Texture2D" uid="uid://djw77ikaw55jc" path="res://assets/textures/floor.png" id="2_61lip"]
 [ext_resource type="Texture2D" uid="uid://bit4733bie7k6" path="res://assets/sprites/banban.png" id="2_87l3k"]
 [ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="3_3gyfu"]
 
@@ -13,9 +14,16 @@ offset_right = 341.0
 offset_bottom = 192.0
 color = Color(0.0392157, 0.270588, 0.164706, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 342.0
+offset_bottom = 192.0
+texture = ExtResource("2_61lip")
+stretch_mode = 1
+
 [node name="title" type="Label" parent="."]
+offset_left = 41.0
 offset_top = 28.0
-offset_right = 256.0
+offset_right = 297.0
 offset_bottom = 110.0
 theme_override_colors/font_shadow_color = Color(0.490196, 0.490196, 0.490196, 1)
 theme_override_fonts/font = ExtResource("1_b8gt1")
@@ -30,26 +38,26 @@ scale = Vector2(0.146, 0.134)
 texture = ExtResource("2_87l3k")
 
 [node name="play button" type="Button" parent="."]
-offset_left = 84.0
+offset_left = 125.0
 offset_top = 117.0
-offset_right = 171.0
+offset_right = 212.0
 offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("3_3gyfu")
 text = "Play"
 
 [node name="settings button" type="Button" parent="."]
-offset_left = 84.0
+offset_left = 125.0
 offset_top = 137.0
-offset_right = 171.0
+offset_right = 212.0
 offset_bottom = 155.0
 theme_override_fonts/font = ExtResource("3_3gyfu")
 text = "Settings
 "
 
 [node name="quit button" type="Button" parent="."]
-offset_left = 84.0
+offset_left = 125.0
 offset_top = 158.0
-offset_right = 171.0
+offset_right = 212.0
 offset_bottom = 176.0
 theme_override_fonts/font = ExtResource("3_3gyfu")
 text = "Quit

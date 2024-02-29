@@ -65,6 +65,8 @@ func shoot():
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
 		ray_cast_3d.get_collider().kill()
 		
+	$ShootSoundPlayer.play()
+		
 func shoot_anim_done():
 	can_shoot = true
 
