@@ -6,6 +6,8 @@ const SPEED = 5.0
 const MOUSE_SENS = 0.5
 const JUMP_VELOCITY = 4.5
 
+var inWater = false
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var can_shoot = true
@@ -52,6 +54,11 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
+	if(inWater):
+		velocity.x = velocity.x / 2
+		velocity.y = velocity.y / 1.2
+		velocity.z = velocity.z / 2
+	
 	move_and_slide()
 
 
@@ -76,3 +83,14 @@ func kill():
 	transition.change_scene("res://scenes/game over.tscn")
 	
 
+
+
+func _on_player_area_area_entered(area):
+	if area.name == "WaterArea":
+		inWater = true
+		
+
+
+func _on_player_area_area_exited(area):
+		if area.name == "WaterArea":
+			inWater = false

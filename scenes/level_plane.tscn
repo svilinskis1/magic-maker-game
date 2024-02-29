@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw63v4bgeton"]
+
+[ext_resource type="Texture2D" uid="uid://djw77ikaw55jc" path="res://assets/textures/floor.png" id="1_cyp05"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwuwi"]
+albedo_texture = ExtResource("1_cyp05")
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6njo3"]
+material = SubResource("StandardMaterial3D_kwuwi")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7bqr"]
+size = Vector3(2.03889, 0.0736015, 2.04815)
+
+[node name="LevelPlane" type="MeshInstance3D"]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6njo3")
+
+[node name="PlaneBody" type="StaticBody3D" parent="."]
+
+[node name="PlaneCollision" type="CollisionShape3D" parent="PlaneBody"]
+shape = SubResource("BoxShape3D_r7bqr")

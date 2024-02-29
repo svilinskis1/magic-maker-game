@@ -6,8 +6,12 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_15x4i"]
 radius = 0.230065
 
-[node name="pickup" type="Node3D"]
+[node name="pickup" type="RigidBody3D"]
+collision_layer = 2
 script = ExtResource("1_7sof1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_15x4i")
 
 [node name="sprite" type="Sprite3D" parent="."]
 pixel_size = 0.0025
@@ -18,7 +22,6 @@ texture = ExtResource("1_khxw1")
 [node name="pickupArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pickupArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0111486, 0)
 shape = SubResource("SphereShape3D_15x4i")
 
 [connection signal="area_entered" from="pickupArea" to="." method="_on_area_3d_area_entered"]

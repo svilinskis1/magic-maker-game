@@ -8,6 +8,8 @@ radius = 0.507245
 height = 1.01449
 
 [node name="Apple" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ng8ap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -15,9 +17,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00766087, 1.09658, 0)
 shape = SubResource("CapsuleShape3D_mtiy4")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionArea" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00766087, 1.09658, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00766087, 0.09658, 0)
 shape = SubResource("CapsuleShape3D_mtiy4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -25,3 +28,5 @@ transform = Transform3D(0.226028, 0, 0, 0, 0.226028, 0, 0, 0, 0.671044, 0, 1.055
 billboard = 2
 texture_filter = 0
 texture = ExtResource("2_h7agl")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
