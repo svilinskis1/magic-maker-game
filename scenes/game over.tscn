@@ -1,45 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5cp6nitf5wb3"]
+[gd_scene load_steps=8 format=3 uid="uid://c5cp6nitf5wb3"]
 
 [ext_resource type="Script" path="res://scripts/game over.gd" id="1_c482e"]
+[ext_resource type="PackedScene" uid="uid://cgkdbq7gixbth" path="res://scenes/frame.tscn" id="2_4ki44"]
 [ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="2_13338"]
 [ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="3_lufuf"]
+[ext_resource type="Texture2D" uid="uid://cgdquv18ugvji" path="res://assets/ui/button.png" id="4_8657a"]
+[ext_resource type="Texture2D" uid="uid://mx5lqo0a2del" path="res://assets/ui/buttonhover.png" id="5_upnbl"]
+[ext_resource type="Texture2D" uid="uid://bhmqehjc1yxhq" path="res://assets/ui/buttonpress.png" id="6_bg24u"]
 
 [node name="game over" type="Node2D"]
 script = ExtResource("1_c482e")
 
-[node name="bg" type="ColorRect" parent="."]
-offset_right = 341.0
-offset_bottom = 192.0
-color = Color(0.0392157, 0.270588, 0.164706, 1)
-metadata/_edit_use_anchors_ = true
+[node name="bg" parent="." instance=ExtResource("2_4ki44")]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 89.0
-offset_top = 19.0
-offset_right = 233.0
-offset_bottom = 50.0
+offset_left = 101.0
+offset_top = 28.0
+offset_right = 245.0
+offset_bottom = 59.0
 theme_override_fonts/font = ExtResource("2_13338")
 theme_override_font_sizes/font_size = 23
 text = "Game Over!"
 metadata/_edit_use_anchors_ = true
 
-[node name="quit button" type="Button" parent="."]
-offset_left = 131.0
-offset_top = 97.0
-offset_right = 181.0
-offset_bottom = 120.0
-theme_override_fonts/font = ExtResource("3_lufuf")
-text = "Quit"
-metadata/_edit_use_anchors_ = true
+[node name="play button2" type="TextureButton" parent="."]
+offset_left = 133.0
+offset_top = 78.0
+offset_right = 197.0
+offset_bottom = 102.0
+texture_normal = ExtResource("4_8657a")
+texture_pressed = ExtResource("5_upnbl")
+texture_hover = ExtResource("6_bg24u")
 
-[node name="retry button" type="Button" parent="."]
-offset_left = 137.0
-offset_top = 61.0
-offset_right = 175.0
-offset_bottom = 84.0
+[node name="Label" type="Label" parent="play button2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 48.0
+offset_bottom = 20.0
 theme_override_fonts/font = ExtResource("3_lufuf")
 text = "Retry"
-metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="quit button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="retry button" to="." method="_on_retry_button_pressed"]
+[node name="play button" type="TextureButton" parent="."]
+offset_left = 133.0
+offset_top = 117.0
+offset_right = 197.0
+offset_bottom = 141.0
+texture_normal = ExtResource("4_8657a")
+texture_pressed = ExtResource("5_upnbl")
+texture_hover = ExtResource("6_bg24u")
+
+[node name="Label" type="Label" parent="play button"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 7.0
+offset_right = 44.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("3_lufuf")
+text = "Quit"
+
+[connection signal="pressed" from="play button2" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="play button" to="." method="_on_quit_button_pressed"]

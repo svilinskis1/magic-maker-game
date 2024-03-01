@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://btoud78wleqe3"]
+[gd_scene load_steps=12 format=3 uid="uid://btoud78wleqe3"]
 
 [ext_resource type="Script" path="res://scripts/results.gd" id="1_thk3f"]
 [ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="2_1xyru"]
-[ext_resource type="Texture2D" uid="uid://djw77ikaw55jc" path="res://assets/textures/floor.png" id="2_hj681"]
+[ext_resource type="PackedScene" uid="uid://cgkdbq7gixbth" path="res://scenes/frame.tscn" id="3_4bkl7"]
 [ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="3_6ttlf"]
 [ext_resource type="Texture2D" uid="uid://bnqv7ys82cp43" path="res://assets/sprites/applepickup2.png" id="4_5q38s"]
+[ext_resource type="Texture2D" uid="uid://cgdquv18ugvji" path="res://assets/ui/button.png" id="4_n52gr"]
 [ext_resource type="Texture2D" uid="uid://q8ruvawxp12s" path="res://assets/sprites/spagpickup.png" id="5_6c3q0"]
+[ext_resource type="Texture2D" uid="uid://mx5lqo0a2del" path="res://assets/ui/buttonhover.png" id="5_qhulk"]
+[ext_resource type="Texture2D" uid="uid://bhmqehjc1yxhq" path="res://assets/ui/buttonpress.png" id="6_47wev"]
 
 [sub_resource type="Animation" id="Animation_2bepl"]
 resource_name = "results"
@@ -13,7 +16,7 @@ length = 7.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("appleAmt:modulate")
+tracks/0/path = NodePath("labels/appleAmt:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +28,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("appleWorth:modulate")
+tracks/1/path = NodePath("labels/appleWorth:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -37,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("appleMoney:modulate")
+tracks/2/path = NodePath("labels/appleMoney:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -49,7 +52,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("spagAmt:modulate")
+tracks/3/path = NodePath("labels/spagAmt:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -61,7 +64,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("spagWorth:modulate")
+tracks/4/path = NodePath("labels/spagWorth:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -73,7 +76,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("spagMoney:modulate")
+tracks/5/path = NodePath("labels/spagMoney:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -85,7 +88,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("totalMoney:modulate")
+tracks/6/path = NodePath("labels/totalMoney:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -103,11 +106,7 @@ _data = {
 [node name="results" type="Node2D"]
 script = ExtResource("1_thk3f")
 
-[node name="BG" type="TextureRect" parent="."]
-offset_right = 342.0
-offset_bottom = 192.0
-texture = ExtResource("2_hj681")
-stretch_mode = 1
+[node name="bg" parent="." instance=ExtResource("3_4bkl7")]
 
 [node name="title" type="Label" parent="."]
 offset_left = 98.0
@@ -120,17 +119,27 @@ text = "Results"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="continue" type="Button" parent="."]
-offset_left = 144.0
-offset_top = 145.0
-offset_right = 200.0
+[node name="play button" type="TextureButton" parent="."]
+offset_left = 141.0
+offset_top = 144.0
+offset_right = 205.0
 offset_bottom = 168.0
-theme_override_fonts/font = ExtResource("3_6ttlf")
-text = "Continue
-"
-metadata/_edit_use_anchors_ = true
+texture_normal = ExtResource("4_n52gr")
+texture_pressed = ExtResource("5_qhulk")
+texture_hover = ExtResource("6_47wev")
 
-[node name="apples" type="Label" parent="."]
+[node name="Label" type="Label" parent="play button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 56.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("3_6ttlf")
+text = "Continue"
+
+[node name="labels" type="Node" parent="."]
+
+[node name="apples" type="Label" parent="labels"]
 offset_left = 81.0
 offset_top = 57.0
 offset_right = 249.0
@@ -138,7 +147,7 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "Apples         x  $      = $"
 
-[node name="spaghettis" type="Label" parent="."]
+[node name="spaghettis" type="Label" parent="labels"]
 offset_left = 58.0
 offset_top = 87.0
 offset_right = 250.0
@@ -146,7 +155,7 @@ offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "Spaghettis         x  $      = $"
 
-[node name="total" type="Label" parent="."]
+[node name="total" type="Label" parent="labels"]
 offset_left = 88.0
 offset_top = 111.0
 offset_right = 280.0
@@ -154,7 +163,7 @@ offset_bottom = 134.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "Total                   = $"
 
-[node name="appleAmt" type="Label" parent="."]
+[node name="appleAmt" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 145.0
 offset_top = 58.0
@@ -163,7 +172,7 @@ offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "00"
 
-[node name="spagAmt" type="Label" parent="."]
+[node name="spagAmt" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 145.0
 offset_top = 87.0
@@ -172,7 +181,7 @@ offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "00"
 
-[node name="spagWorth" type="Label" parent="."]
+[node name="spagWorth" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 206.0
 offset_top = 88.0
@@ -181,7 +190,7 @@ offset_bottom = 101.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "00"
 
-[node name="appleWorth" type="Label" parent="."]
+[node name="appleWorth" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 206.0
 offset_top = 58.0
@@ -190,25 +199,25 @@ offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "00"
 
-[node name="appleMoney" type="Label" parent="."]
+[node name="appleMoney" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 258.0
 offset_top = 57.0
-offset_right = 271.0
+offset_right = 276.0
 offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "000"
 
-[node name="spagMoney" type="Label" parent="."]
+[node name="spagMoney" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 258.0
 offset_top = 87.0
-offset_right = 271.0
+offset_right = 276.0
 offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("3_6ttlf")
 text = "000"
 
-[node name="totalMoney" type="Label" parent="."]
+[node name="totalMoney" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 258.0
 offset_top = 111.0
@@ -232,4 +241,4 @@ libraries = {
 "": SubResource("AnimationLibrary_jvggw")
 }
 
-[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="play button" to="." method="_on_continue_pressed"]

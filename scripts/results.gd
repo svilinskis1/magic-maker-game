@@ -5,15 +5,15 @@ extends Node2D
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	$appleAmt.text = str("%02d" % global.apples_collected)
-	$appleWorth.text = str("%02d" % global.apple_worth)
-	$appleMoney.text = str("%03d" % (global.apples_collected * global.apple_worth))
+	$labels/appleAmt.text = str("%02d" % global.apples_collected)
+	$labels/appleWorth.text = str("%02d" % global.apple_worth)
+	$labels/appleMoney.text = str("%03d" % (global.apples_collected * global.apple_worth))
 	
-	$spagAmt.text = str("%02d" % global.spag_collected)
-	$spagWorth.text = str("%02d" % global.spag_worth)
-	$spagMoney.text = str("%03d" % (global.spag_collected * global.spag_worth))	
+	$labels/spagAmt.text = str("%02d" % global.spag_collected)
+	$labels/spagWorth.text = str("%02d" % global.spag_worth)
+	$labels/spagMoney.text = str("%03d" % (global.spag_collected * global.spag_worth))	
 	
-	$totalMoney.text = str("%03d" % (global.apples_collected * global.apple_worth + global.spag_collected * global.spag_worth))
+	$labels/totalMoney.text = str("%03d" % (global.apples_collected * global.apple_worth + global.spag_collected * global.spag_worth))
 	
 	$AnimationPlayer.play("results")
 

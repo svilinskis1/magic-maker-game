@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfubs5p3vky71"]
+[gd_scene load_steps=5 format=3 uid="uid://cfubs5p3vky71"]
 
 [ext_resource type="Script" path="res://scripts/apple.gd" id="1_ng8ap"]
 [ext_resource type="Texture2D" uid="uid://d3me84dbw0s7e" path="res://assets/sprites/apple2.png" id="2_h7agl"]
+[ext_resource type="AudioStream" uid="uid://uwn1wd1r34ex" path="res://assets/sounds/hurt.wav" id="3_yhibe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mtiy4"]
 radius = 0.507245
@@ -28,5 +29,9 @@ transform = Transform3D(0.226028, 0, 0, 0, 0.226028, 0, 0, 0, 0.671044, 0, 1.055
 billboard = 2
 texture_filter = 0
 texture = ExtResource("2_h7agl")
+
+[node name="HurtSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yhibe")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
