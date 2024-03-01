@@ -6,16 +6,18 @@ const SPEED = 5.0
 const MOUSE_SENS = 0.5
 const JUMP_VELOCITY = 4.5
 
-var inWater = false
-
+var health = 3
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var inWater = false
 var can_shoot = true
 var dead = false
+var invincible = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	global.player = self
+	health = 3
 	
 func _input(event):
 	if dead:
@@ -69,23 +71,34 @@ func shoot():
 	#if !can_shoot:
 		#return
 	#can_shoot = false
-	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
-		ray_cast_3d.get_collider().kill()
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("take_damage"):
+		ray_cast_3d.get_collider().take_damage(1)
 		
 	$ShootSoundPlayer.play()
 		
 func shoot_anim_done():
 	can_shoot = true
 
-func kill():
-	dead = true
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	transition.change_scene("res://scenes/game over.tscn")
-
+func take_damage(dmg):
+	if(not invincible):
+		invincible = true
+		$InvincibilityTimer.start()
+		health -= dmg
+		$UI/Control/HealthBar.value = health
+		
+	if(health < 1):
+		dead = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		transition.change_scene("res://scenes/game over.tscn")
+	
 func _on_player_area_area_entered(area):
 	if area.name == "WaterArea":
-		inWater = true		
-
+		inWater = true
+		
 func _on_player_area_area_exited(area):
 		if area.name == "WaterArea":
 			inWater = false
+
+
+func _on_invincibility_timer_timeout():
+	invincible = false
