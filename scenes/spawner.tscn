@@ -1,12 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://lf7r3yksicqd"]
+[gd_scene load_steps=5 format=3 uid="uid://lf7r3yksicqd"]
 
 [ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_4rtxg"]
+[ext_resource type="Texture2D" uid="uid://d2clmqaorqm72" path="res://assets/textures/grate.png" id="2_3n2cw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mxen"]
+transparency = 1
+albedo_texture = ExtResource("2_3n2cw")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ein04"]
+material = SubResource("StandardMaterial3D_6mxen")
 
 [node name="Spawner" type="Area3D"]
 script = ExtResource("1_4rtxg")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 0.001
 autostart = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ein04")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -17,12 +17,14 @@ func _physics_process(delta):
 		return
 	if player == null:
 		return
-		
-	var dir = player.global_position - global_position
-	dir = dir.normalized()
 	
-	linear_velocity.x = dir.x * move_speed
-	linear_velocity.z = dir.z * move_speed
+	if(not invincible):
+		var dir = player.global_position - global_position
+		dir = dir.normalized()
+	
+		linear_velocity.x = dir.x * move_speed
+		linear_velocity.z = dir.z * move_speed
+		
 	linear_velocity.y -= gravity * delta
 	
 	if(inWater):

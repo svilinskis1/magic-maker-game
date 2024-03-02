@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var move_speed = 1.0
+@export var move_speed = 1.5
 @export var attack_range = 0.5
 
 @onready var player = global.player
@@ -13,6 +13,7 @@ func _physics_process(delta):
 		return
 	
 	var dir = player.global_position - global_position
+	dir += Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0))
 	dir = dir.normalized()
 	
 	velocity = dir * move_speed
