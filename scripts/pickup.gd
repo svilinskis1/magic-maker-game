@@ -29,16 +29,13 @@ func _physics_process(delta):
 
 func _on_area_3d_area_entered(area):
 	if area.name == "PlayerArea":
+		$CollectSoundPlayer.play()
 		match type:
 			"apple":
 				global.apples_collected += 1
-				print("picked up apple")
 		
 			"spaghetti":
 				global.spag_collected += 1
-				print("picked up spag")
-		
-		$CollectSoundPlayer.play()
-		
+
 		remove_child(self)
 		queue_free()

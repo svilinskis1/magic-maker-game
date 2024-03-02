@@ -29,6 +29,7 @@ func _on_area_3d_area_entered(area):
 		player.take_damage(1)
 
 func take_damage(dmg):
+	$HurtSoundPlayer.play()
 	dead = true
 	$CollisionShape3D.disabled = true
 	$Area3D/CollisionArea.disabled = true
@@ -37,4 +38,3 @@ func take_damage(dmg):
 	var pickup_object = pickup.instantiate()
 	pickup_object.initialize("apple")
 	add_child(pickup_object)
-	

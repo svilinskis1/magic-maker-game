@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba6uwlxv4j5ev"]
+[gd_scene load_steps=9 format=3 uid="uid://ba6uwlxv4j5ev"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7dwxx"]
 [ext_resource type="Texture2D" uid="uid://3qfb5r4577th" path="res://assets/sprites/hand.png" id="2_wovxr"]
 [ext_resource type="Texture2D" uid="uid://dnadd3iurm13m" path="res://assets/sprites/crosshair.png" id="3_gml2l"]
-[ext_resource type="AudioStream" uid="uid://uwn1wd1r34ex" path="res://assets/sounds/hurt.wav" id="4_akpc7"]
-[ext_resource type="AudioStream" uid="uid://p8i436qsd4fa" path="res://assets/sounds/throw.wav" id="5_aj3in"]
+[ext_resource type="Texture2D" uid="uid://cw42vb05cgpy0" path="res://assets/ui/health bar.png" id="4_pj5w1"]
+[ext_resource type="AudioStream" uid="uid://p8i436qsd4fa" path="res://assets/sounds/throw.wav" id="5_oajm2"]
+[ext_resource type="AudioStream" uid="uid://uwn1wd1r34ex" path="res://assets/sounds/hurt.wav" id="6_nds27"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8sl6o"]
 
@@ -60,29 +61,33 @@ autoplay = "idle"
 position = Vector2(171, 96)
 texture = ExtResource("3_gml2l")
 
-[node name="HurtSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_akpc7")
-bus = &"SFX"
+[node name="HealthBarBG" type="Sprite2D" parent="UI/Control"]
+position = Vector2(39, 173)
+texture = ExtResource("4_pj5w1")
 
-[node name="ShootSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_aj3in")
 [node name="HealthBar" type="ProgressBar" parent="UI/Control"]
+modulate = Color(0, 0.890625, 0.210938, 1)
+texture_filter = 1
 layout_mode = 0
-offset_left = 6.0
-offset_top = 157.0
-offset_right = 180.0
-offset_bottom = 184.0
+offset_left = 13.0
+offset_top = 170.0
+offset_right = 65.0
+offset_bottom = 175.0
 max_value = 3.0
 step = 1.0
 value = 3.0
 rounded = true
+show_percentage = false
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_rfoxf")
+[node name="ShootSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_oajm2")
 bus = &"SFX"
 
 [node name="InvincibilityTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="HurtSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nds27")
 
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_player_area_area_exited"]

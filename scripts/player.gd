@@ -85,6 +85,7 @@ func take_damage(dmg):
 		$InvincibilityTimer.start()
 		health -= dmg
 		$UI/Control/HealthBar.value = health
+		$HurtSoundPlayer.play()
 		
 	if(health < 1):
 		dead = true

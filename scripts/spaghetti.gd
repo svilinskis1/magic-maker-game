@@ -50,6 +50,7 @@ func _on_player_area_area_exited(area):
 
 func take_damage(dmg):
 	if(not invincible):
+		$HurtSoundPlayer.play()
 		health -= dmg
 		invincible = true
 		$InvincibilityTimer.start()
