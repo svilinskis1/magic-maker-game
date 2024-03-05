@@ -75,6 +75,12 @@ func shoot():
 		ray_cast_3d.get_collider().take_damage(1)
 		
 	$ShootSoundPlayer.play()
+	$UI/Control/Hand.play("shoot")
+	$UI/Control/Crosshair.texture = load("res://assets/ui/knife crosshair.png")
+
+	await ($UI/Control/Hand.animation_finished)
+	$UI/Control/Hand.play("idle")
+	$UI/Control/Crosshair.texture = load("res://assets/sprites/crosshair.png")
 		
 func shoot_anim_done():
 	can_shoot = true
@@ -95,6 +101,8 @@ func take_damage(dmg):
 func _on_player_area_area_entered(area):
 	if area.name == "WaterArea":
 		inWater = true
+	if area.name == "pickupArea":
+		$CollectSoundPlayer.play()
 		
 func _on_player_area_area_exited(area):
 		if area.name == "WaterArea":

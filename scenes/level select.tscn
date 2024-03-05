@@ -1,6 +1,5 @@
 [gd_scene load_steps=9 format=3 uid="uid://ci5pis83dnlqu"]
 
-[ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="1_fhjvr"]
 [ext_resource type="Script" path="res://scripts/level select.gd" id="1_xde2d"]
 [ext_resource type="FontFile" uid="uid://yne66lh3rbhn" path="res://assets/fonts/font.png" id="2_4s8vm"]
 [ext_resource type="Texture2D" uid="uid://djw77ikaw55jc" path="res://assets/textures/floor.png" id="2_fqe64"]
@@ -8,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgdquv18ugvji" path="res://assets/ui/button.png" id="5_so0uy"]
 [ext_resource type="Texture2D" uid="uid://mx5lqo0a2del" path="res://assets/ui/buttonhover.png" id="6_s3uvl"]
 [ext_resource type="Texture2D" uid="uid://bhmqehjc1yxhq" path="res://assets/ui/buttonpress.png" id="7_8jxjh"]
+[ext_resource type="Texture2D" uid="uid://08bn8u78312e" path="res://assets/sprites/restaurant1.png" id="8_fv0fd"]
 
 [node name="level select" type="Node2D"]
 script = ExtResource("1_xde2d")
@@ -20,32 +20,62 @@ stretch_mode = 1
 
 [node name="frame" parent="." instance=ExtResource("3_q0j0x")]
 
-[node name="title" type="Label" parent="."]
-offset_left = 100.0
-offset_top = 23.0
-offset_right = 244.0
-offset_bottom = 54.0
-theme_override_fonts/font = ExtResource("1_fhjvr")
-theme_override_font_sizes/font_size = 23
-text = "Level Select"
-metadata/_edit_use_anchors_ = true
-
-[node name="Level Button" type="TextureButton" parent="."]
-offset_left = 139.0
-offset_top = 97.0
-offset_right = 203.0
-offset_bottom = 121.0
+[node name="Continue" type="TextureButton" parent="."]
+offset_left = 225.0
+offset_top = 156.0
+offset_right = 289.0
+offset_bottom = 180.0
 texture_normal = ExtResource("5_so0uy")
 texture_pressed = ExtResource("6_s3uvl")
 texture_hover = ExtResource("7_8jxjh")
 
-[node name="Label" type="Label" parent="Level Button"]
+[node name="Label" type="Label" parent="Continue"]
 layout_mode = 0
-offset_left = 11.0
+offset_left = 18.0
 offset_top = 7.0
-offset_right = 53.0
+offset_right = 66.0
 offset_bottom = 20.0
 theme_override_fonts/font = ExtResource("2_4s8vm")
-text = "Level 1"
+text = "Fight"
 
-[connection signal="pressed" from="Level Button" to="." method="_on_button_pressed"]
+[node name="Continue2" type="TextureButton" parent="."]
+offset_left = 61.0
+offset_top = 156.0
+offset_right = 125.0
+offset_bottom = 180.0
+texture_normal = ExtResource("5_so0uy")
+texture_pressed = ExtResource("6_s3uvl")
+texture_hover = ExtResource("7_8jxjh")
+
+[node name="Label" type="Label" parent="Continue2"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 7.0
+offset_right = 68.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("2_4s8vm")
+text = "Menu"
+
+[node name="Restaurant" type="Sprite2D" parent="."]
+position = Vector2(174, 71)
+scale = Vector2(2, 2)
+texture = ExtResource("8_fv0fd")
+
+[node name="nextMoney" type="Label" parent="."]
+offset_left = 193.0
+offset_top = 140.0
+offset_right = 313.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("2_4s8vm")
+text = "Next Level: $1000"
+
+[node name="currentMoney" type="Label" parent="."]
+offset_left = 43.0
+offset_top = 140.0
+offset_right = 163.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("2_4s8vm")
+text = "Current Money: $0000"
+
+[connection signal="pressed" from="Continue" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Continue2" to="." method="_on_menu_pressed"]

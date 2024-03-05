@@ -15,6 +15,9 @@ func _ready():
 	
 	$labels/totalMoney.text = str("%03d" % (global.apples_collected * global.apple_worth + global.spag_collected * global.spag_worth))
 	
+	global.update_money_total(global.apples_collected * global.apple_worth + global.spag_collected * global.spag_worth)
+	$labels/cumulativeMoney.text = str("%04d" % global.total_money)
+	
 	$AnimationPlayer.play("results")
 
 
