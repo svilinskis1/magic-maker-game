@@ -16,14 +16,13 @@ script = ExtResource("1_lgsja")
 
 [node name="title" type="Label" parent="."]
 offset_left = 16.0
-offset_top = 29.0
+offset_top = 46.0
 offset_right = 327.0
-offset_bottom = 111.0
+offset_bottom = 128.0
 theme_override_colors/font_shadow_color = Color(0.490196, 0.490196, 0.490196, 1)
 theme_override_fonts/font = ExtResource("1_b8gt1")
 theme_override_font_sizes/font_size = 24
-text = "FOOD FIGHT:
-URGENT SURVIVAL"
+text = "FOOD FIGHT"
 horizontal_alignment = 1
 
 [node name="Banban" type="Sprite2D" parent="."]
