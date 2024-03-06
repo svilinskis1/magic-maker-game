@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://p8i436qsd4fa" path="res://assets/sounds/throw.wav" id="5_oajm2"]
 [ext_resource type="AudioStream" uid="uid://uwn1wd1r34ex" path="res://assets/sounds/hurt.wav" id="6_nds27"]
 [ext_resource type="AudioStream" uid="uid://co3xtc5j10wqy" path="res://assets/sounds/collect.wav" id="7_rv3dd"]
+[ext_resource type="AudioStream" uid="uid://brkcho8mqt58p" path="res://assets/sounds/step.wav" id="7_1csca"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8sl6o"]
 
@@ -109,6 +110,18 @@ stream = ExtResource("6_nds27")
 
 [node name="CollectSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_rv3dd")
+[node name="InvincibilityTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="FootstepTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HurtSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nds27")
+
+[node name="FootstepSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1csca")
 bus = &"SFX"
 
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]

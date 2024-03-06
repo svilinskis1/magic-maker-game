@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends RigidBody3D
 
 @export var move_speed = 1.0
 @export var attack_range = 0.5
@@ -17,25 +17,28 @@ func _physics_process(delta):
 		return
 	if player == null:
 		return
+	
+	if(not invincible):
+		var dir = player.global_position - global_position
+		dir = dir.normalized()
+	
+		linear_velocity.x = dir.x * move_speed
+		linear_velocity.z = dir.z * move_speed
 		
-	velocity.y -= gravity * delta
-	
-	var dir = player.global_position - global_position
-	dir.y = 0.0
-	dir = dir.normalized()
-	
-	velocity = dir * move_speed
+	linear_velocity.y -= gravity * delta
 	
 	if(inWater):
-		velocity = velocity / 2
+		linear_velocity = linear_velocity / 2
 		
-	move_and_slide()
-
 func _process(delta):
 	if(dead && get_child_count() == 0):
 		remove_child(self)
 		queue_free()
-
+		
+	if(invincible):
+		$Sprite3D.modulate = Color(1, 0 ,0)
+	else:
+		$Sprite3D.modulate = Color(1, 1, 1)
 
 func _on_area_3d_area_entered(area):
 	if area.name == "PlayerArea":

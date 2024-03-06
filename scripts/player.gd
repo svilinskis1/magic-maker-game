@@ -52,6 +52,10 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if ($FootstepTimer.time_left <= 0 && is_on_floor()):
+			$FootstepSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
+			$FootstepSoundPlayer.play()
+			$FootstepTimer.start(0.4)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -62,7 +66,6 @@ func _physics_process(delta):
 		velocity.z = velocity.z / 2
 	
 	move_and_slide()
-
 
 func restart():
 	get_tree().reload_current_scene()
@@ -107,7 +110,6 @@ func _on_player_area_area_entered(area):
 func _on_player_area_area_exited(area):
 		if area.name == "WaterArea":
 			inWater = false
-
 
 func _on_invincibility_timer_timeout():
 	invincible = false
