@@ -32,8 +32,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09937, -0.400355)
 
 [node name="Environment" type="Node3D" parent="."]
 
-[node name="LevelPlane" parent="Environment" instance=ExtResource("8_n16yl")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0.553348, 0)
+[node name="Ceiling" parent="Environment" instance=ExtResource("8_n16yl")]
+transform = Transform3D(-15, 8.74228e-08, 0, -1.31134e-06, -1, 0, 0, 0, 15, 5.226, 4.67493, 5.003)
+skeleton = NodePath("../..")
+
+[node name="Ground" parent="Environment" instance=ExtResource("8_n16yl")]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 5.00172, 0.553347, 5.18375)
+skeleton = NodePath("../..")
+
+[node name="Water" parent="Environment" instance=ExtResource("9_aeb3c")]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 3.80302, 0.775959, 5.32129)
 skeleton = NodePath("../..")
 
 [node name="KitchenFloor" parent="Environment" instance=ExtResource("8_n16yl")]
@@ -56,40 +64,248 @@ transform = Transform3D(-8.38567e-08, 0, -0.333333, 0, 1, 0, 1.91841, 0, -1.4570
 skeleton = NodePath("../LevelCube3")
 surface_material_override/0 = SubResource("StandardMaterial3D_ll377")
 
-[node name="LevelCube" parent="Environment" instance=ExtResource("9_towi5")]
-transform = Transform3D(3.532, 0, 0, 0, -1, 3.01992e-06, 0, -1.50996e-07, -20, -8.18433, 0.536802, -0.104583)
+[node name="Floor1" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(3.532, 0, 0, 0, -1, 3.2405e-06, 0, -1.50996e-07, -21.4608, -8.18433, 0.536802, -0.104583)
 skeleton = NodePath("../..")
 
-[node name="LevelCube2" parent="Environment" instance=ExtResource("9_towi5")]
+[node name="Floor2" parent="Environment" instance=ExtResource("9_towi5")]
 transform = Transform3D(14.5863, 0, 0, 0, -1, 3.55508e-07, 0, -8.74228e-08, -4.06654, 2.62056, 0.536801, -7.89363)
 skeleton = NodePath("../..")
 
-[node name="LevelCube3" parent="Environment" instance=ExtResource("9_towi5")]
+[node name="Floor3" parent="Environment" instance=ExtResource("9_towi5")]
 transform = Transform3D(10.2484, 0, 0, 0, -1, 7.61975e-07, 0, -8.74228e-08, -8.71596, 0.698924, 0.536801, -0.596571)
 skeleton = NodePath("../..")
 
-[node name="LevelCube4" parent="Environment" instance=ExtResource("9_towi5")]
-transform = Transform3D(3.41403, 0, 0, 0, -1, 1.21284e-06, 0, -8.74228e-08, -13.8733, 8.2388, 0.536801, 3.04606)
+[node name="Floor4" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(3.41403, 0, 0, 0, -1, 1.27082e-06, 0, -8.74228e-08, -14.5365, 8.2388, 0.536801, 2.19402)
 skeleton = NodePath("../..")
 
-[node name="LevelCube5" parent="Environment" instance=ExtResource("9_towi5")]
+[node name="Floor5" parent="Environment" instance=ExtResource("9_towi5")]
 transform = Transform3D(11.2212, 0, 0, 0, -1, 4.76489e-07, 0, -8.74228e-08, -5.4504, 0.898505, 0.536801, 7.17309)
 skeleton = NodePath("../..")
 
-[node name="LevelCube6" parent="Environment" instance=ExtResource("9_towi5")]
+[node name="Floor6" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(2.68222, 0, 0, 0, -1, 4.78933e-06, 0, -1.50996e-07, -31.7183, 17.391, 0.53, 3.913)
+skeleton = NodePath("../..")
+
+[node name="Floor7" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(16.512, 0, 0, 0, -1.00316, 3.58891e-07, 0, -8.76987e-08, -4.10523, 3.792, 0.53, 17.122)
+skeleton = NodePath("../..")
+
+[node name="Floor8" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(2.86361, 0, 0, 0, -1, 4.77786e-06, 0, -1.50996e-07, -31.6423, 12.888, 0.53, 3.301)
+skeleton = NodePath("../..")
+
+[node name="Floor9" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(2.65816, 0, 0, 0, -1, 8.10435e-07, 0, -8.74228e-08, -9.27029, -7.76303, 0.53, 14.501)
+skeleton = NodePath("../..")
+
+[node name="Floor10" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(14.7136, 0, 0, 0, -1, 2.85146e-07, 0, -8.74228e-08, -3.26169, 2.65847, 0.53, 11.427)
+skeleton = NodePath("../..")
+
+[node name="Bridge1" parent="Environment" instance=ExtResource("9_towi5")]
 transform = Transform3D(1, 0, 0, 0, -0.5, 4.04518e-07, 0, -7.54979e-08, -2.679, 0.612127, 0.536801, 3.20564)
 skeleton = NodePath("../..")
 
-[node name="LevelCube7" parent="Environment" instance=ExtResource("9_towi5")]
+[node name="Bridge2" parent="Environment" instance=ExtResource("9_towi5")]
 transform = Transform3D(2.043, 0, 0, 0, -0.5, 1.50996e-07, 0, -7.54979e-08, -1, -5.52159, 0.536801, -0.779003)
 skeleton = NodePath("../..")
 
-[node name="LevelCube8" parent="Environment" instance=ExtResource("9_towi5")]
+[node name="Bridge3" parent="Environment" instance=ExtResource("9_towi5")]
 transform = Transform3D(2.078, 0, 0, 0, -0.5, 1.50996e-07, 0, -7.54979e-08, -1, 5.61873, 0.536801, -0.744639)
 skeleton = NodePath("../..")
 
-[node name="LevelCube9" parent="Environment" instance=ExtResource("9_towi5")]
+[node name="Bridge4" parent="Environment" instance=ExtResource("9_towi5")]
 transform = Transform3D(1, 0, 0, 0, -0.5, 4.11384e-07, 0, -7.54979e-08, -2.72448, 0.599024, 0.536801, -4.55502)
+skeleton = NodePath("../..")
+
+[node name="LevelCube37" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(1.821, 0, 0, 0, -0.5, 1.50996e-07, 0, -7.54979e-08, -1, 10.6645, 0.590147, 2.1181)
+skeleton = NodePath("../..")
+
+[node name="LevelCube42" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(1, 0, 0, 0, -0.5, 4.00856e-07, 0, -7.54979e-08, -2.65475, 3.21042, 0.590148, 13.8446)
+skeleton = NodePath("../..")
+
+[node name="LevelCube43" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(2.14816, 0, 0, 0, -0.5, 1.50996e-07, 0, -7.54979e-08, -1, 15.0339, 0.590147, -2.51066)
+skeleton = NodePath("../..")
+
+[node name="LevelCube44" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(2.11435, 0, 0, 0, -0.5, 1.50996e-07, 0, -7.54979e-08, -1, 15.0815, 0.590147, 10.1948)
+skeleton = NodePath("../..")
+
+[node name="Wall1" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.5, 0, 0, 0, -4, 4.52987e-06, 0, -6.03983e-07, -30, -9.082, 3, 5.144)
+skeleton = NodePath("../..")
+
+[node name="Wall2" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.5, 0, 0, 0, -4, 4.52987e-06, 0, -6.03983e-07, -30, 18.866, 3, 5.009)
+skeleton = NodePath("../..")
+
+[node name="Wall3" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(30, 0, 0, 0, -4, 7.54979e-08, 0, -6.03983e-07, -0.5, 4.454, 3, -9.451)
+skeleton = NodePath("../..")
+
+[node name="Wall4" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(30, 0, 0, 0, -4, 7.54979e-08, 0, -6.03983e-07, -0.5, 4.837, 3, 19.368)
+skeleton = NodePath("../..")
+
+[node name="LevelCube34" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(2.26183e-08, -2.64009e-14, 5, -7.81321e-08, -4, 8.38345e-21, 0.517445, -6.03983e-07, -2.18557e-07, 8.93646, 3, 9.601)
+skeleton = NodePath("../..")
+
+[node name="LevelCube35" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.5, 0, 0, 0, -4, 1.50996e-06, 0, -6.03983e-07, -10, 11.6888, 3, -4.229)
+skeleton = NodePath("../..")
+
+[node name="LevelCube36" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.5, 0, 0, 0, -4, 1.92912e-06, 0, -6.03983e-07, -12.776, 11.689, 3, 9.946)
+skeleton = NodePath("../..")
+
+[node name="LevelCube38" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(-3.77489e-08, 3.49691e-07, -11.3295, -4.37114e-08, -4, -9.90456e-07, -0.5, 3.49691e-07, 8.55353e-07, -1.47014, 3, 9.601)
+skeleton = NodePath("../..")
+
+[node name="LevelCube41" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.5, 0, 0, 0, -4, 2.38271e-07, 0, -6.03983e-07, -1.578, 11.689, 3, 18.585)
+skeleton = NodePath("../..")
+
+[node name="Pillar1" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 4.01363, 3.0368, -2.64962)
+skeleton = NodePath("../..")
+
+[node name="Pillar2" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 4.08206, 3.0368, 1.29127)
+skeleton = NodePath("../..")
+
+[node name="Pillar3" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -3.79533, 3.0368, -7.82868)
+skeleton = NodePath("../..")
+
+[node name="Pillar4" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -3.356, 3.037, 7)
+skeleton = NodePath("../..")
+
+[node name="Pillar5" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 7.81732, 3.0368, -2.2976)
+skeleton = NodePath("../..")
+
+[node name="Pillar6" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -3.96449, 3.0368, -2.84086)
+skeleton = NodePath("../..")
+
+[node name="Pillar7" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -4.1012, 2.59015, 1.37757)
+skeleton = NodePath("../..")
+
+[node name="Pillar8" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 1.122, 3.037, 7)
+skeleton = NodePath("../..")
+
+[node name="Pillar9" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -8.00855, 3.0368, 6.89472)
+skeleton = NodePath("../..")
+
+[node name="Pillar10" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -8.07771, 3.0368, -2.47589)
+skeleton = NodePath("../..")
+
+[node name="Pillar11" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -8.02608, 3.0368, 2.97747)
+skeleton = NodePath("../..")
+
+[node name="Pillar12" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 7.17401, 3.0368, -7.82517)
+skeleton = NodePath("../..")
+
+[node name="Pillar13" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -8.20273, 3.0368, -7.40851)
+skeleton = NodePath("../..")
+
+[node name="Pillar14" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -0.226864, 3.0368, -7.81754)
+skeleton = NodePath("../..")
+
+[node name="Pillar15" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 3.8416, 3.0368, -7.85123)
+skeleton = NodePath("../..")
+
+[node name="Pillar16" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 5.973, 3.037, 7)
+skeleton = NodePath("../..")
+
+[node name="Pillar17" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 7.96546, 3.0368, 1.97278)
+skeleton = NodePath("../..")
+
+[node name="LevelCube" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 7.71, 3.09015, 11.4)
+skeleton = NodePath("../..")
+
+[node name="LevelCube2" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -2.479, 3.09, 11.4)
+skeleton = NodePath("../..")
+
+[node name="LevelCube3" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 3.28833, 3.09015, 11.4)
+skeleton = NodePath("../..")
+
+[node name="LevelCube4" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -2.231, 3.09, 17.2)
+skeleton = NodePath("../..")
+
+[node name="LevelCube5" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 1.215, 3.09015, 17.2)
+skeleton = NodePath("../..")
+
+[node name="LevelCube6" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 5.08178, 3.09, 17.2)
+skeleton = NodePath("../..")
+
+[node name="LevelCube7" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 9.182, 3.09, 17.2)
+skeleton = NodePath("../..")
+
+[node name="LevelCube8" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -7.6, 3.09015, 17.363)
+skeleton = NodePath("../..")
+
+[node name="LevelCube9" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, -7.6, 3.09, 11.4)
+skeleton = NodePath("../..")
+
+[node name="LevelCube10" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 13.1, 3.09, -4.37)
+skeleton = NodePath("../..")
+
+[node name="LevelCube11" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 17.35, 3.09, -4.36987)
+skeleton = NodePath("../..")
+
+[node name="LevelCube12" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 13.1, 2.59, 7.85)
+skeleton = NodePath("../..")
+
+[node name="LevelCube13" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 13.1, 3.09, -0.245282)
+skeleton = NodePath("../..")
+
+[node name="LevelCube14" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 17.35, 3.09, 7.85044)
+skeleton = NodePath("../..")
+
+[node name="LevelCube15" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 17.35, 3.09, -0.245)
+skeleton = NodePath("../..")
+
+[node name="LevelCube16" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 17.35, 3.09, 12.5275)
+skeleton = NodePath("../..")
+
+[node name="LevelCube17" parent="Environment" instance=ExtResource("9_towi5")]
+transform = Transform3D(0.75, 0, 0, 0, -4, 1.13247e-07, 0, -6.03983e-07, -0.75, 13.1, 2.59, 12.528)
 skeleton = NodePath("../..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -128,82 +344,24 @@ theme_override_fonts/font = ExtResource("5_7nx4w")
 theme_override_font_sizes/font_size = 24
 text = "99"
 
+[node name="Spawner" parent="." instance=ExtResource("6_abxav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.484, 1.5, -9.14304)
+enemy_scene = ExtResource("2_3aokm")
+
 [node name="Spawner2" parent="." instance=ExtResource("6_abxav")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.429, 1.5, -9.368)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53944, 1.5, -9.15066)
 enemy_scene = ExtResource("4_0uv3y")
 
-[node name="Water" parent="." instance=ExtResource("9_aeb3c")]
-transform = Transform3D(19.1571, 0, 0, 0, 1, 0, 0, 0, 18.4676, 0.194698, 0.775959, -0.0135125)
-
-[node name="LevelCube" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.5, 0, 0, 0, -3, 3.01992e-06, 0, -4.52987e-07, -20, -9.70704, 2.5368, -0.0820358)
-
-[node name="LevelCube2" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.5, 0, 0, 0, -3, 3.01992e-06, 0, -4.52987e-07, -20, 9.68908, 2.5368, 0.0178971)
-
-[node name="LevelCube3" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(20, 0, 0, 0, -3, 7.54979e-08, 0, -4.52987e-07, -0.5, -0.0351282, 2.5368, -9.63172)
-
-[node name="LevelCube4" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(20, 0, 0, 0, -3, 7.54979e-08, 0, -4.52987e-07, -0.5, 0.0371006, 2.5368, 9.75153)
-
-[node name="Spawner" parent="." instance=ExtResource("6_abxav")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.407, 1.5, -4.788)
-enemy_scene = ExtResource("2_3aokm")
-
 [node name="Spawner3" parent="." instance=ExtResource("6_abxav")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.537, 1.5, 9.375)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.40065, 1.5, 19.1154)
 enemy_scene = ExtResource("2_3aokm")
 
-[node name="LevelCube5" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 4.01363, 2.2868, -2.64962)
+[node name="Spawner4" parent="." instance=ExtResource("6_abxav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1688, 1.56297, -9.18535)
+enemy_scene = ExtResource("4_0uv3y")
 
-[node name="LevelCube6" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 4.08206, 2.2868, 1.29127)
-
-[node name="LevelCube7" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -3.79533, 2.2868, -7.82868)
-
-[node name="LevelCube8" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -3.35596, 2.2868, 7.21258)
-
-[node name="LevelCube9" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 7.81732, 2.2868, -2.2976)
-
-[node name="LevelCube10" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -3.96449, 2.2868, -2.84086)
-
-[node name="LevelCube11" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -4.1012, 1.84015, 1.37757)
-
-[node name="LevelCube12" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 1.12222, 2.2868, 7.18131)
-
-[node name="LevelCube13" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -8.00855, 2.2868, 6.89472)
-
-[node name="LevelCube14" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -8.07771, 2.2868, -2.47589)
-
-[node name="LevelCube15" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -8.02608, 2.2868, 2.97747)
-
-[node name="LevelCube16" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 7.17401, 2.2868, -7.82517)
-
-[node name="LevelCube17" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -8.20273, 2.2868, -7.40851)
-
-[node name="LevelCube18" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, -0.226864, 2.2868, -7.81754)
-
-[node name="LevelCube19" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 3.8416, 2.2868, -7.85123)
-
-[node name="LevelCube20" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 5.9733, 2.2868, 7.41829)
-
-[node name="LevelCube21" parent="." instance=ExtResource("9_towi5")]
-transform = Transform3D(0.75, 0, 0, 0, -2.5, 1.13247e-07, 0, -3.77489e-07, -0.75, 7.96546, 2.2868, 1.97278)
+[node name="Spawner5" parent="." instance=ExtResource("6_abxav")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.1159, 1.54504, 19.0583)
+enemy_scene = ExtResource("2_3aokm")
 
 [connection signal="timeout" from="UI/Timer" to="." method="_on_timer_timeout"]
