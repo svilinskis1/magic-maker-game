@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba6uwlxv4j5ev"]
+[gd_scene load_steps=12 format=3 uid="uid://ba6uwlxv4j5ev"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7dwxx"]
 [ext_resource type="Texture2D" uid="uid://3qfb5r4577th" path="res://assets/sprites/hand.png" id="2_wovxr"]
 [ext_resource type="Texture2D" uid="uid://dnadd3iurm13m" path="res://assets/sprites/crosshair.png" id="3_gml2l"]
+[ext_resource type="Texture2D" uid="uid://cfj7nv0r43ajy" path="res://assets/sprites/hand2.png" id="3_qw4ts"]
 [ext_resource type="Texture2D" uid="uid://cw42vb05cgpy0" path="res://assets/ui/health bar.png" id="4_pj5w1"]
 [ext_resource type="AudioStream" uid="uid://p8i436qsd4fa" path="res://assets/sounds/throw.wav" id="5_oajm2"]
 [ext_resource type="AudioStream" uid="uid://uwn1wd1r34ex" path="res://assets/sounds/hurt.wav" id="6_nds27"]
 [ext_resource type="AudioStream" uid="uid://brkcho8mqt58p" path="res://assets/sounds/step.wav" id="7_1csca"]
+[ext_resource type="AudioStream" uid="uid://co3xtc5j10wqy" path="res://assets/sounds/collect.wav" id="7_rv3dd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8sl6o"]
 
@@ -18,6 +20,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qw4ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qw4ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qw4ts")
+}],
+"loop": false,
+"name": &"shoot",
 "speed": 5.0
 }]
 
@@ -55,8 +71,10 @@ offset_bottom = 40.0
 position = Vector2(251, 128)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_b30oj")
-animation = &"idle"
+animation = &"shoot"
 autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="Crosshair" type="Sprite2D" parent="UI/Control"]
 position = Vector2(171, 96)
@@ -80,19 +98,21 @@ value = 3.0
 rounded = true
 show_percentage = false
 
+[node name="InvincibilityTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="ShootSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_oajm2")
 bus = &"SFX"
 
-[node name="InvincibilityTimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
+[node name="HurtSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nds27")
+
+[node name="CollectSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rv3dd")
 
 [node name="FootstepTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="HurtSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_nds27")
 
 [node name="FootstepSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_1csca")

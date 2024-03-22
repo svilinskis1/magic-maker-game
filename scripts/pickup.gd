@@ -29,7 +29,6 @@ func _physics_process(delta):
 
 func _on_area_3d_area_entered(area):
 	if area.name == "PlayerArea":
-		$CollectSoundPlayer.play()
 		match type:
 			"apple":
 				global.apples_collected += 1
