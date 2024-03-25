@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://btoud78wleqe3"]
+[gd_scene load_steps=13 format=3 uid="uid://btoud78wleqe3"]
 
 [ext_resource type="Script" path="res://scripts/results.gd" id="1_thk3f"]
 [ext_resource type="FontFile" uid="uid://daskbkbie80jl" path="res://assets/fonts/RubikDoodleShadow-Regular.ttf" id="2_1xyru"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://q8ruvawxp12s" path="res://assets/sprites/spagpickup.png" id="5_6c3q0"]
 [ext_resource type="Texture2D" uid="uid://mx5lqo0a2del" path="res://assets/ui/buttonhover.png" id="5_qhulk"]
 [ext_resource type="Texture2D" uid="uid://bhmqehjc1yxhq" path="res://assets/ui/buttonpress.png" id="6_47wev"]
+[ext_resource type="Texture2D" uid="uid://b45l6ar6dmcwi" path="res://assets/sprites/cat.png" id="10_svyng"]
 
 [sub_resource type="Animation" id="Animation_2bepl"]
 resource_name = "results"
@@ -273,5 +274,10 @@ texture = ExtResource("5_6c3q0")
 libraries = {
 "": SubResource("AnimationLibrary_jvggw")
 }
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(286, 163)
+scale = Vector2(2, 2)
+texture = ExtResource("10_svyng")
 
 [connection signal="pressed" from="play button" to="." method="_on_continue_pressed"]
